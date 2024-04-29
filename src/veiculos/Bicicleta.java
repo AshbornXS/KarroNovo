@@ -1,3 +1,5 @@
+package veiculos;
+
 import java.util.Scanner;
 
 public class Bicicleta extends Veiculo {
@@ -20,7 +22,7 @@ public class Bicicleta extends Veiculo {
         System.out.println("M - Disco Mecânico");
         System.out.println("H - Disco Hidráulico");
 
-        return switch (scanner.next().toUpperCase()) {
+        return switch (scanner.nextLine().toUpperCase()) {
             case "C" -> "Cantiléver";
             case "V" -> "V-Brake";
             case "F" -> "Ferradura";
@@ -40,7 +42,6 @@ public class Bicicleta extends Veiculo {
         String modelo = getInput(scanner, "Digite o modelo da bicicleta:");
         String valor = getInput(scanner, "Digite o valor da bicicleta:");
         String freio = tipoFreio(scanner);
-        scanner.nextLine();
 
         if (cod == null || cor == null || marca == null || modelo == null || valor == null || freio == null) {
             System.out.println("Bicicleta não pode ser cadastrada com sucesso.\n");

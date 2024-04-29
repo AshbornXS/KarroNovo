@@ -1,37 +1,43 @@
+import veiculos.Bicicleta;
+import veiculos.Veiculo;
+import veiculos.automotor.Caminhao;
+import veiculos.automotor.Carro;
+import veiculos.automotor.Moto;
+
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        String op;
+        int op;
         Scanner scanner = new Scanner(System.in);
 
         do {
             exibirMenu();
-            op = scanner.nextLine();
+            op = Integer.parseInt(scanner.nextLine());
 
             switch (op) {
-                case "1":
+                case 1:
                     cadastrarVeiculo(scanner);
                     break;
-                case "2":
+                case 2:
                     editarVeiculo(scanner);
                     break;
-                case "3":
+                case 3:
                     visualizarVeiculo(scanner);
                     break;
-                case "4":
+                case 4:
                     removerVeiculo(scanner);
                     break;
-                case "5":
+                case 5:
                     Veiculo.listarVeiculos();
                     break;
-                case "0":
+                case 0:
                     break;
                 default:
                     System.out.println("Opção inválida!");
                     break;
             }
-        } while (!op.equals("0"));
+        } while (op != 0);
     }
 
     private static void exibirMenu() {
@@ -51,8 +57,7 @@ public class Main {
         System.out.println("3 - Caminhão");
         System.out.println("4 - Bicicleta");
         System.out.println("5 - Voltar ao menu principal");
-        int opCadastro = scanner.nextInt();
-        scanner.nextLine();
+        int opCadastro = Integer.parseInt(scanner.nextLine());
 
         switch (opCadastro) {
             case 1:
@@ -78,8 +83,7 @@ public class Main {
 
     private static void editarVeiculo(Scanner scanner) {
         System.out.println("\nDigite a placa/núm. série do veículo que você deseja editar:");
-        String codEdit = scanner.next();
-        scanner.nextLine();
+        String codEdit = scanner.nextLine();
         Veiculo veiculoEdit = Veiculo.buscarVeiculo(codEdit);
 
         if (veiculoEdit != null) {
@@ -91,7 +95,7 @@ public class Main {
 
     private static void visualizarVeiculo(Scanner scanner) {
         System.out.println("\nDigite a placa/núm. série do veículo que você deseja ver as informações:");
-        String codBusca = scanner.next();
+        String codBusca = scanner.nextLine();
         Veiculo veiculoBusca = Veiculo.buscarVeiculo(codBusca);
 
         if (veiculoBusca != null) {
@@ -103,7 +107,7 @@ public class Main {
 
     private static void removerVeiculo(Scanner scanner) {
         System.out.println("\nDigite a placa/núm. série do veículo que você deseja remover:");
-        String codRemove = scanner.next();
+        String codRemove = scanner.nextLine();
         Veiculo.removerVeiculo(codRemove);
     }
 }

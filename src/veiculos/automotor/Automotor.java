@@ -1,3 +1,7 @@
+package veiculos.automotor;
+
+import veiculos.Veiculo;
+
 import java.util.Scanner;
 
 public abstract class Automotor extends Veiculo {

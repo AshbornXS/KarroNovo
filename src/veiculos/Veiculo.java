@@ -1,3 +1,9 @@
+package veiculos;
+
+import veiculos.automotor.Caminhao;
+import veiculos.automotor.Carro;
+import veiculos.automotor.Moto;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;

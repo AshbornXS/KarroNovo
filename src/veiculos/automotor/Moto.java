@@ -1,3 +1,5 @@
+package veiculos.automotor;
+
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -25,8 +27,7 @@ public class Moto extends Automotor {
         String valor = getInput(scanner, "Digite o valor da moto:");
         String combustivel = listarCombustivel("moto", scanner);
         System.out.println("A moto possui partida elétrica? (s/n)");
-        this.partEletrica = scanner.next().equals("s");
-        scanner.nextLine();
+        this.partEletrica = scanner.nextLine().equals("s");
         this.cilindradas = Integer.parseInt(Objects.requireNonNull(getInput(scanner, "Digite a quantidade de cilindradas da moto:")));
 
         if (cod == null || cor == null || marca == null || modelo == null || valor == null || combustivel == null) {

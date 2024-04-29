@@ -1,3 +1,5 @@
+package veiculos.automotor;
+
 import java.util.Objects;
 import java.util.Scanner;
 
